@@ -210,7 +210,7 @@
     function showSubmitError() {
       if (successEl) {
         successEl.textContent =
-          "Something went wrong. Please try again, or email us directly if the problem continues.";
+          "Something went wrong. Please try again.";
         successEl.classList.add("is-visible");
       }
     }
