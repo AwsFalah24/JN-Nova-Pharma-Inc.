@@ -62,7 +62,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     Dropdown menus (Applications)
+     Dropdown menus
      -------------------------------------------------------------------------- */
   dropdowns.forEach(function (dropdown) {
     const button = dropdown.querySelector("button");
@@ -171,13 +171,13 @@
   });
 
   /* --------------------------------------------------------------------------
-     Contact form — client-side validation only
-     Connect form action / API endpoint when a backend is available.
+     Contact form — client-side validation + Netlify Forms submission
      -------------------------------------------------------------------------- */
   const contactForm = document.getElementById("contact-form");
 
   if (contactForm) {
     const successEl = document.getElementById("form-success");
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
 
     function setFieldError(field, message) {
       const group = field.closest(".form-group");
@@ -199,11 +199,24 @@
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
+    function showSuccess() {
+      if (successEl) {
+        successEl.classList.add("is-visible");
+        successEl.setAttribute("role", "status");
+      }
+      contactForm.reset();
+    }
+
+    function showSubmitError() {
+      if (successEl) {
+        successEl.textContent =
+          "Something went wrong. Please try again, or email us directly if the problem continues.";
+        successEl.classList.add("is-visible");
+      }
+    }
+
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
-
-      // TODO: Replace client-only handling with form action or API integration
-      // Example: fetch('/api/contact', { method: 'POST', body: new FormData(contactForm) })
 
       let valid = true;
       const name = contactForm.querySelector("#name");
@@ -245,12 +258,34 @@
         return;
       }
 
-      if (successEl) {
-        successEl.classList.add("is-visible");
-        successEl.setAttribute("role", "status");
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
       }
 
-      contactForm.reset();
+      const formData = new FormData(contactForm);
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Network response was not ok");
+          if (successEl) {
+            successEl.textContent = "Thank you. Your message has been sent.";
+          }
+          showSuccess();
+        })
+        .catch(function () {
+          showSubmitError();
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit";
+          }
+        });
     });
 
     contactForm.querySelectorAll("input, textarea").forEach(function (field) {
