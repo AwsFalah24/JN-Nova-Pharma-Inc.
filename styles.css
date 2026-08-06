@@ -1305,6 +1305,25 @@ select {
   box-shadow: var(--shadow-sm);
 }
 
+.contact-email-alt {
+  margin-top: 1.5rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.contact-email-alt a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email-alt a:hover {
+  text-decoration: underline;
+}
+
 .form-group {
   margin-bottom: 1.25rem;
 }
@@ -1376,6 +1395,84 @@ select {
   margin-bottom: 1rem;
 }
 
+/* Compact contact page — fit first viewport */
+.page-contact .contact-section {
+  padding: calc(var(--header-h) + 1.75rem) 0 2rem;
+}
+
+.page-contact .contact-grid {
+  gap: 2.25rem;
+  align-items: start;
+}
+
+.page-contact .contact-info .breadcrumb {
+  margin-bottom: 0.65rem;
+}
+
+.page-contact .contact-info .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.page-contact .contact-info .section-title {
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  margin-bottom: 0.9rem;
+  line-height: 1.28;
+}
+
+.page-contact .contact-info p {
+  font-size: 0.975rem;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.page-contact .contact-info .link-row {
+  margin-top: 1rem;
+  gap: 0.75rem;
+}
+
+.page-contact .contact-info .btn {
+  padding: 0.65rem 1.15rem;
+  font-size: 0.9rem;
+}
+
+.page-contact .form-card {
+  padding: 1.5rem 1.6rem 1.35rem;
+  border-radius: var(--radius);
+}
+
+.page-contact .form-group {
+  margin-bottom: 0.85rem;
+}
+
+.page-contact .form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.page-contact .form-group input,
+.page-contact .form-group textarea,
+.page-contact .form-group select {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.925rem;
+}
+
+.page-contact .form-group textarea {
+  min-height: 0;
+  resize: vertical;
+}
+
+.page-contact .form-card .btn {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  width: auto;
+}
+
+.page-contact .contact-email-alt {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  font-size: 0.9rem;
+}
+
 /* --------------------------------------------------------------------------
    CTA band
    -------------------------------------------------------------------------- */
@@ -1410,46 +1507,46 @@ select {
 .site-footer {
   background: var(--dark);
   color: rgba(255, 255, 255, 0.8);
-  padding: 4rem 0 2rem;
+  padding: 2.5rem 0 1.35rem;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 2.5rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .footer-brand img {
-  height: 48px;
+  height: 36px;
   width: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
   opacity: 0.95;
 }
 
 .footer-brand p {
-  font-size: 0.925rem;
-  line-height: 1.6;
-  max-width: 280px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 260px;
 }
 
 .footer-col h4 {
   color: var(--white);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 1.15rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-col ul {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.4rem;
 }
 
 .footer-col a {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 0.925rem;
+  font-size: 0.85rem;
   transition: color 0.25s ease;
 }
 
@@ -1459,12 +1556,12 @@ select {
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.85rem;
+  gap: 0.75rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.55);
 }
 

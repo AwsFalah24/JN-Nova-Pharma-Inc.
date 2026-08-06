@@ -11,7 +11,7 @@
   <meta property="og:image" content="assets/logo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-load">
+<body class="page-load page-contact">
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
@@ -38,7 +38,7 @@
   </header>
 
   <main id="main">
-    <section class="section" style="padding-top: calc(var(--header-h) + 3rem);" aria-labelledby="contact-heading">
+    <section class="section contact-section" aria-labelledby="contact-heading">
       <div class="container contact-grid">
         <div class="contact-info reveal-left">
           <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -106,12 +106,14 @@
 
             <div class="form-group">
               <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+              <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
               <p class="form-error" role="alert"></p>
             </div>
 
             <button class="btn btn--primary" type="submit">Submit</button>
           </form>
+
+          <p class="contact-email-alt">Or email <a href="mailto:info@jnnova.com">info@jnnova.com</a></p>
         </div>
       </div>
     </section>
