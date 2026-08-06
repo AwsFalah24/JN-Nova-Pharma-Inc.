@@ -924,6 +924,9 @@ select {
   display: flex;
   width: max-content;
   animation: partnersWheel 35s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .partners-wheel:hover .partners-wheel__track {
@@ -956,7 +959,7 @@ select {
   object-fit: contain;
   filter: none;
   opacity: 0.92;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .partners-wheel__list img[src*="sinai-health"],
@@ -968,15 +971,14 @@ select {
 
 .partners-wheel__list li:hover img {
   opacity: 1;
-  transform: scale(1.04);
 }
 
 @keyframes partnersWheel {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
