@@ -81,11 +81,60 @@
             </li>
           </ul>
         </div>
-        <aside class="tech-layout__aside reveal-right" aria-hidden="true">
-          <!-- Replace with enzyme / molecular platform scientific image -->
-          <div class="media-frame tech-layout__frame img-zoom parallax-img">
-            <div class="media-frame__pattern"></div>
-            <div class="media-frame__overlay"></div>
+        <aside class="tech-layout__aside reveal-right">
+          <div class="tech-layout__frame tech-drawing-frame" role="img" aria-label="Animated drawing of an enzyme-based therapeutic platform restoring biological pathways">
+            <svg class="tech-drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" fill="none" aria-hidden="true">
+              <!-- outer orbit rings -->
+              <circle class="tech-drawing__line tech-drawing__line--orbit" cx="260" cy="260" r="198"/>
+              <circle class="tech-drawing__line tech-drawing__line--orbit2" cx="260" cy="260" r="158"/>
+
+              <!-- lung / organ outline hint -->
+              <path class="tech-drawing__line tech-drawing__line--organ" d="M260 148
+                C232 148 210 168 204 196
+                C196 232 208 268 232 292
+                C244 304 252 318 260 334
+                C268 318 276 304 288 292
+                C312 268 324 232 316 196
+                C310 168 288 148 260 148 Z" stroke-linejoin="round"/>
+
+              <!-- central enzyme core -->
+              <circle class="tech-drawing__line tech-drawing__line--core" cx="260" cy="248" r="36"/>
+              <circle class="tech-drawing__line tech-drawing__line--core2" cx="260" cy="248" r="18"/>
+
+              <!-- molecular arms -->
+              <path class="tech-drawing__line tech-drawing__line--arm" d="M260 212 V168" stroke-linecap="round"/>
+              <path class="tech-drawing__line tech-drawing__line--arm" d="M288 228 L328 196" stroke-linecap="round"/>
+              <path class="tech-drawing__line tech-drawing__line--arm" d="M288 268 L334 292" stroke-linecap="round"/>
+              <path class="tech-drawing__line tech-drawing__line--arm" d="M232 268 L186 292" stroke-linecap="round"/>
+              <path class="tech-drawing__line tech-drawing__line--arm" d="M232 228 L192 196" stroke-linecap="round"/>
+
+              <circle class="tech-drawing__line tech-drawing__line--node" cx="260" cy="158" r="10"/>
+              <circle class="tech-drawing__line tech-drawing__line--node" cx="338" cy="188" r="9"/>
+              <circle class="tech-drawing__line tech-drawing__line--node" cx="344" cy="302" r="9"/>
+              <circle class="tech-drawing__line tech-drawing__line--node" cx="176" cy="302" r="9"/>
+              <circle class="tech-drawing__line tech-drawing__line--node" cx="182" cy="188" r="9"/>
+
+              <!-- pathway restoration arcs -->
+              <path class="tech-drawing__line tech-drawing__line--path" d="M150 360 C190 330 230 320 260 320 C290 320 330 330 370 360" stroke-linecap="round"/>
+              <path class="tech-drawing__line tech-drawing__line--path2" d="M170 390 C210 368 236 360 260 360 C284 360 310 368 350 390" stroke-linecap="round"/>
+
+              <!-- indication nodes (multi-disease platform) -->
+              <circle class="tech-drawing__line tech-drawing__line--ind" cx="120" cy="260" r="12"/>
+              <circle class="tech-drawing__line tech-drawing__line--ind" cx="400" cy="260" r="12"/>
+              <circle class="tech-drawing__line tech-drawing__line--ind" cx="260" cy="420" r="12"/>
+              <path class="tech-drawing__line tech-drawing__line--link" d="M132 260 H224" stroke-linecap="round"/>
+              <path class="tech-drawing__line tech-drawing__line--link" d="M296 260 H388" stroke-linecap="round"/>
+              <path class="tech-drawing__line tech-drawing__line--link" d="M260 284 V408" stroke-linecap="round"/>
+
+              <!-- soft fills -->
+              <circle class="tech-drawing__fill tech-drawing__fill--core" cx="260" cy="248" r="36"/>
+              <circle class="tech-drawing__fill tech-drawing__fill--inner" cx="260" cy="248" r="18"/>
+              <circle class="tech-drawing__fill tech-drawing__fill--node" cx="260" cy="158" r="10"/>
+              <circle class="tech-drawing__fill tech-drawing__fill--node" cx="338" cy="188" r="9"/>
+              <circle class="tech-drawing__fill tech-drawing__fill--node" cx="344" cy="302" r="9"/>
+              <circle class="tech-drawing__fill tech-drawing__fill--node" cx="176" cy="302" r="9"/>
+              <circle class="tech-drawing__fill tech-drawing__fill--node" cx="182" cy="188" r="9"/>
+            </svg>
           </div>
         </aside>
       </div>
@@ -143,7 +192,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/logo.png" alt="JN Nova Pharma logo" width="573" height="160">
+          <img src="assets/logo-white.png" alt="JN Nova Pharma logo" width="573" height="160">
           <p>Transforming Canadian Science into Global Medicines</p>
         </div>
         <div class="footer-col">
