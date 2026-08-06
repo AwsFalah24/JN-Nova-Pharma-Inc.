@@ -2221,6 +2221,121 @@ select {
 }
 
 /* --------------------------------------------------------------------------
+   About — opportunity / clinical / manufacturing (grid background)
+   -------------------------------------------------------------------------- */
+
+.about-grid-section {
+  position: relative;
+  padding: 5rem 0;
+  background-color: #f3f7fb;
+  background-image:
+    linear-gradient(rgba(23, 105, 170, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 105, 170, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  border-top: 1px solid rgba(23, 105, 170, 0.08);
+  border-bottom: 1px solid rgba(23, 105, 170, 0.08);
+}
+
+.about-grid-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 0%, rgba(255, 255, 255, 0.75), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 90% 100%, rgba(234, 243, 250, 0.9), transparent 50%);
+  pointer-events: none;
+}
+
+.about-grid-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-grid-section__intro {
+  max-width: 820px;
+  margin-bottom: 2.5rem;
+}
+
+.about-grid-section__title {
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.about-grid-section__title span {
+  color: var(--primary);
+}
+
+.about-grid-section__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-stat {
+  padding: 1.35rem 1.4rem;
+  border-left: 3px solid var(--primary);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.about-stat__value {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.about-stat__label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.about-grid-section__panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.about-panel {
+  padding: 1.85rem 1.75rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(23, 105, 170, 0.12);
+  backdrop-filter: blur(4px);
+}
+
+.about-panel__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.55rem;
+}
+
+.about-panel h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+
+.about-panel p {
+  color: var(--text-secondary);
+  font-size: 0.975rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
    Technology page layout
    -------------------------------------------------------------------------- */
 
@@ -2840,6 +2955,15 @@ select {
     margin-left: 0;
     margin-top: 2.25rem;
     border-radius: 48% 52% 42% 58% / 45% 55% 45% 55%;
+  }
+
+  .about-grid-section {
+    padding: 3.75rem 0;
+  }
+
+  .about-grid-section__stats,
+  .about-grid-section__panels {
+    grid-template-columns: 1fr;
   }
 
   .tech-layout {
